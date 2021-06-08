@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'meusite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'meublog',
+        'NAME': 'marcosfaino$meublog',
         'USER': 'marcosfaino',
         'PASSWORD': 'AulasProg3',
         'HOST': 'marcosfaino.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
