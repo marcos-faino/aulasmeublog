@@ -1,0 +1,38 @@
+{% extends "meublog/base.html" %}
+
+{% block titulo %} Comentário - {{ post.titulo }} {% endblock %}
+
+{% block conteudo %}
+{% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="nome"
+                   value="{{ user.username }}" readonly />
+        </div>
+         <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" name="email"
+                   value="{{ user.email }}" readonly />
+        </div>
+        <div class="form-group">
+            <label for="corpo">Comentário:</label>
+            <textarea id="corpo" name="corpo"
+                      rows="6" cols="23"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Salvar">
+        </div>
+    </form>
+{% else %}
+    <h3 class="alert"> Página Disponível apenas para
+        usuários autenticados</h3>
+    <h4 class="warning">Por favor faça login ou cadastre-se </h4>
+    <p><a href="{% url 'meublog:listar_posts' %}"
+          class="btn btn-warning">Voltar aos posts</a></p>
+
+{% endif %}
+
+{% endblock %}
