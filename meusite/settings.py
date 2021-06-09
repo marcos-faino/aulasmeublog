@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'meusite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'marcosfaino$meublog',
+        'NAME': 'marcosfaino$meublog', # no pythonanywhere é o nome do usuário + $ + nome do banco
         'USER': 'marcosfaino',
-        'PASSWORD': 'AulasProg3',
+        'PASSWORD': 'SuaSenha', # colocar sua senha aqui.
         'HOST': 'marcosfaino.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
